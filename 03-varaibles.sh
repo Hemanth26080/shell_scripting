@@ -2,6 +2,7 @@
 
 set -euo pipefail
 
+# This script demonstrates a simple conversation about shell scripting.
 person1=hemanth
 
 person2=mahesh
