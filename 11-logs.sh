@@ -1,4 +1,5 @@
 #!/bin/bash
+
 set -euo pipefail
 
 USERID=$(id -u )
@@ -11,7 +12,7 @@ N="\e[0m"
 mkdir -p /var/log/shellscripts
 LOGFolder="/var/log/shellscripts"
 SCRIPT_NAME=$( echo $0 | cut -d '.' -f1 ) # 11-logs
-LOG_FILE="$LOGFolder"/"$SCRIPT_NAME".log # /var/log/shell-script/11-logs.log
+LOG_FILE="$LOGFolder"/$SCRIPT_NAME.log # /var/log/shell-script/11-logs.log
 
 echo "Script Execution started at: $(date)" &>> "$LOG_FILE" | tee -a "$LOG_FILE"
 
