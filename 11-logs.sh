@@ -2,10 +2,10 @@
 set -euo pipefail
 
 USERID=$(id -u )
-R="/e[31m"
-G="/e[32m"
-Y="/e[33m"
-N="/e[0m"
+R="\e[31m"
+G="\e[32m"
+Y="\e[33m"
+N="\e[0m"
 
 # Create log directory and log file
 mkdir -p /var/log/shellscripts
@@ -33,7 +33,7 @@ VALIDATE() {
 }
 
 # Check and Install Mysql
-dnf list installed mysql $>> "$LOG_FILE" | tee -a "$LOG_FILE"
+dnf list installed mysql &>> "$LOG_FILE" | tee -a "$LOG_FILE"
 if [ $? -ne 0 ]; then
     dnf install mysql -y &>> "$LOG_FILE" | tee -a "$LOG_FILE"
     VALIDATE $? "Mysql"
@@ -42,7 +42,7 @@ else
 fi
 
 # Check and Install Nginx
-dnf list installed nginx $>> "$LOG_FILE" | tee -a "$LOG_FILE"
+dnf list installed nginx &>> "$LOG_FILE" | tee -a "$LOG_FILE"
 if [ $? -ne 0 ]; then
     dnf install nginx -y &>> "$LOG_FILE" | tee -a "$LOG_FILE"
     VALIDATE $? "Nginx"
@@ -51,7 +51,7 @@ else
 fi
 
 # Check and Install Python3
-dnf list installed python3 $>> "$LOG_FILE" | tee -a "$LOG_FILE"
+dnf list installed python3 &>> "$LOG_FILE" | tee -a "$LOG_FILE"
 if [ $? -ne 0 ]; then
     dnf install python3 -y &>> "$LOG_FILE" | tee -a "$LOG_FILE"
     VALIDATE $? "Python3"
