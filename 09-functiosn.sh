@@ -15,7 +15,7 @@ USERID=$(id -u)
 install_pacakge() {
     local package_name=$1
     validation()
-    echo "installing "$pacakges_name"..."
+    echo "installing $package_name"
     dnf install "$package_name" -y
     if [ $? -ne 0 ]; then
         echo "$package_name installation failed."
