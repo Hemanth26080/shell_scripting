@@ -11,8 +11,8 @@ N="\e[0m"
 # Create log directory and log file
 mkdir -p /var/log/shellscripts
 LOGFolder="/var/log/shellscripts"
-SCRIPT_NAME= $( basename "$0" .sh )      #$( echo $0 | cut -d '.' -f1 ) # 11-logs
-LOG_FILE="$LOGFolder"/$SCRIPT_NAME.log # /var/log/shell-script/11-logs.log
+SCRIPT_NAME=$( basename "$0" .sh )      #$( echo $0 | cut -d '.' -f1 ) # 11-logs
+LOG_FILE="$LOGFolder/${SCRIPT_NAME}.log" # /var/log/shell-script/11-logs.log
 
 echo "Script Execution started at: $(date)" | tee -a "$LOG_FILE"
 
