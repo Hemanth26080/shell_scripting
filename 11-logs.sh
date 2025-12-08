@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -euo pipefail
+#set -euo pipefail
 
 USERID=$(id -u )
 R="\e[31m"
@@ -30,7 +30,6 @@ VALIDATE() {
     else
         echo -e "INSTALLING $2 ... $G SUCCESS $N" | tee -a "$LOG_FILE"
         echo "Script Execution ended at: $(date)" &>> "$LOG_FILE"
-        exit 0
     fi
 }
 
