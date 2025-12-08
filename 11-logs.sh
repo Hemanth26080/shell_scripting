@@ -9,11 +9,12 @@ Y="\e[33m"
 N="\e[0m"
 
 # Create log directory and log file
-mkdir -p /var/log/shellscripts
-LOGFolder="/var/log/shellscripts"
-SCRIPT_NAME=$( basename "$0" .sh )      #$( echo $0 | cut -d '.' -f1 ) # 11-logs
+
+LOGFolder="/var/log/shell-scripts"
+SCRIPT_NAME=$( echo $0 | cut -d '.' -f1 ) # 11-logs
 LOG_FILE="$LOGFolder/${SCRIPT_NAME}.log" # /var/log/shell-script/11-logs.log
 
+mkdir -p $LOGFolder
 echo "Script Execution started at: $(date)" | tee -a "$LOG_FILE"
 
 if [ $USERID -ne 0 ]; then
@@ -25,7 +26,7 @@ VALIDATE() {
     if [ $1 -ne 0 ]; then
         echo -e "INSTALLING $2 ... $R FAILURE $N" | tee -a "$LOG_FILE"
         echo "Script Execution ended at: $(date)" &>> "$LOG_FILE"
-        exit 6
+        exit 1
     else
         echo -e "INSTALLING $2 ... $G SUCCESS $N" | tee -a "$LOG_FILE"
         echo "Script Execution ended at: $(date)" &>> "$LOG_FILE"
