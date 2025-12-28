@@ -5,7 +5,7 @@ set -euo pipefail
 number=$0
 max=0
 
-for i in "$@"
+for i in "$@"; do
     if [ "$i" -gt "$max" ]; then
         max=$i
     fi
