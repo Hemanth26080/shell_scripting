@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -euo pipefail
+
 FILE="$1"
 
 # Check if argument is missing

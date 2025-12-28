@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -euo pipefail
+
 DIR="${1:-.}"  # Use given directory, or current folder if not provided
 
 if [ ! -d "$DIR" ]; then

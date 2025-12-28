@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -euo pipefail
+
 # Script to filter lines containing "ERROR" from a log file
 file_name=$1
 Output_file="errors_filtered.log"

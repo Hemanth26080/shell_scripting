@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -euo pipefail
+
 ITEM="$1"
 
 # Check if the item exists
