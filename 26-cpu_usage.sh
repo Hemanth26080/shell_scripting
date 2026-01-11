@@ -13,6 +13,7 @@ echo "Current CPU Usage: ${CPU_USAGE}%"
 
 if [ "$CPU_USAGE" -ge "$CPU_THRESHOLD" ]; then
     echo "ALERT: CPU usage is HIGH (${CPU_USAGE}%)"
+    ./alert.sh
 else
     echo "OK: CPU usage is under control (${CPU_USAGE}%)"
 fi
