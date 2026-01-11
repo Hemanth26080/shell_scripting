@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 
-CPU_THRESHOLD=5 # in project we keep it as 75
+CPU_THRESHOLD=2 # in project we keep it as 75
 
 echo "CPU Usage Alert Script Started"
 echo "Threshold set to ${CPU_THRESHOLD}%"
