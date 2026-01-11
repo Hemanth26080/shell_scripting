@@ -1,7 +1,8 @@
 #!/bin/bash
 set -euo pipefail
 
-CPU_THRESHOLD=2 # in project we keep it as 75
+
+CPU_THRESHOLD="${CPU_THRESHOLD:-2}" # in real project we keep it as 75
 
 echo "CPU Usage Alert Script Started"
 echo "Threshold set to ${CPU_THRESHOLD}%"
@@ -12,7 +13,7 @@ CPU_USAGE=$((100 - ${CPU_IDLE:-0}))
 echo "Current CPU Usage: ${CPU_USAGE}%"
 
 if [ "$CPU_USAGE" -ge "$CPU_THRESHOLD" ]; then
-    echo "ALERT: CPU usage is HIGH (${CPU_USAGE}%)"
+    # echo "ALERT: CPU usage is HIGH (${CPU_USAGE}%)"
     sh alert.sh "Alert CPU usage is HIGH (${CPU_USAGE}%)"
 else
     echo "OK: CPU usage is under control (${CPU_USAGE}%)"
