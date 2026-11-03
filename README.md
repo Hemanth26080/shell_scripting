@@ -5,6 +5,12 @@ The goal is to build strong foundational skills and create practical scripts tha
 
 ---
 
+## 🏛 Architecture & Workflow
+
+![DevSecOps & AWS Shell Scripting Automation Suite](docs/architecture-diagram.png)
+
+---
+
 ## 📌 Purpose of This Repository
 - Develop proficiency in Bash and shell scripting  
 - Build automation scripts commonly used in **cloud operations** and **DevSecOps pipelines**  
